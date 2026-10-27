@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Factory — IoT</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #07111f;
+      color: white;
+    }
+
+    .slide {
+      display: none;
+      min-height: 85vh;
+      padding: 50px;
+      animation: fade 0.5s;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: #48e0e8;
+      font-size: 42px;
+    }
+
+    h2 {
+      color: #6df0bd;
+      font-size: 32px;
+    }
+
+    p, li {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #d1dceb;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .card {
+      padding: 22px;
+      background: #13263b;
+      border: 1px solid #275064;
+      border-radius: 15px;
+    }
+
+    .picture {
+      font-size: 55px;
+      margin: 15px 0;
+    }
+
+    .diagram {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin: 35px 0;
+    }
+
+    .node {
+      background: #123c50;
+      border: 2px solid #48e0e8;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .arrow {
+      color: #6df0bd;
+      font-size: 30px;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px;
+      background: #020812;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #48e0e8;
+      color: #07111f;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #6df0bd;
+    }
+
+    #counter {
+      min-width: 55px;
+      text-align: center;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #48e0e8;
+    }
+
+    .status {
+      color: #6df0bd;
+      font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+      .slide {
+        padding: 25px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      p, li {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 1-SLAYD -->
+  <section class="slide active">
+    <p>INTERNET OF THINGS (IoT)</p>
+    <h1>Simulyatsion IoT loyiha asosida aqlli korxona yaratish</h1>
+    <div class="picture">🏭 📡 ⚙️</div>
+    <p>
+      Aqlli korxona sensorlar va dasturiy tizimlar yordamida
+      jarayonlarni kuzatadigan, ma'lumotlarni tahlil qiladigan
+      va kerakli vazifalarni avtomatlashtiradigan tizimdir.
+    </p>
+  </section>
+
+  <!-- 2-SLAYD -->
+  <section class="slide">
+    <h2>Aqlli tizim va IoT nima?</h2>
+    <p>
+      IoT — internet orqali ma'lumot almashadigan sensorlar,
+      qurilmalar va dasturlar majmuasi. Aqlli tizim shu
+      ma'lumotlardan foydalanib, vaziyatni aniqlaydi va
+      tegishli javob qaytaradi.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="picture">📡</div>
+        <h3>Ma'lumot yig'ish</h3>
+        <p>Sensorlar harorat, namlik yoki harakatni o'lchaydi.</p>
+      </div>
+
+      <div class="card">
+        <div class="picture">🧠</div>
+        <h3>Tahlil</h3>
+        <p>Dastur olingan qiymatlarni tekshiradi va vaziyatni aniqlaydi.</p>
+      </div>
+
+      <div class="card">
+        <div class="picture">⚙️</div>
+        <h3>Boshqarish</h3>
+        <p>Tizim shartga qarab qurilmani yoqadi yoki ogohlantirish beradi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-SLAYD -->
+  <section class="slide">
+    <h2>Loyihaning muammosi va maqsadi</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Muammo</h3>
+        <p>
+          Korxonada haroratning ko'tarilishi yoki uskunadagi
+          nosozlik vaqtida sezilmasa, ish jarayoni buzilishi
+          va ortiqcha xarajatlar yuzaga kelishi mumkin.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Maqsad</h3>
+        <p>
+          Sensorlardan ma'lumot olish, ularni dastur orqali
+          tekshirish va belgilangan shartlar bo'yicha
+          avtomatik javob beradigan tizim modelini yaratish.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-SLAYD -->
+  <section class="slide">
+    <h2>Aqlli tizim arxitekturasi</h2>
+    <p>
+      Tizim bir necha o'zaro bog'langan qismdan iborat.
+      Har bir qism ma'lumotni yig'ishdan boshlab, kerakli
+      harakatni bajarishgacha bo'lgan jarayonda qatnashadi.
+    </p>
+
+    <div class="diagram">
+      <div class="node">Sensorlar<br>📡</div>
+      <div class="arrow">→</div>
+      <div class="node">Boshqaruv<br>🧠</div>
+      <div class="arrow">→</div>
+      <div class="node">Dastur va aloqa<br>🌐</div>
+      <div class="arrow">→</div>
+      <div class="node">Ijro qurilmasi<br>⚙️</div>
+    </div>
+
+    <p>
+      Masalan, sensor haroratni o'lchaydi. Boshqaruv qismi
+      uni tekshiradi. Harorat yuqori bo'lsa, tizim
+      ventilyatsiyani yoqish haqida buyruq beradi.
+    </p>
+  </section>
+
+  <!-- 5-SLAYD -->
+  <section class="slide">
+    <h2>Simulyatsiya qanday ishlaydi?</h2>
+    <p>
+      Simulyatsiya — tizimni haqiqiy korxonaga o'rnatmasdan,
+      virtual muhitda sinash usuli. Unda sensor qiymatlarini
+      o'zgartirib, tizimning javobini tekshirish mumkin.
+    </p>
+
+    <div class="card">
+      <h3>Haroratni o'zgartirib ko'ring</h3>
+      <label for="temperature">Harorat: </label>
+      <strong id="tempValue">28°C</strong>
+
+      <input id="temperature" type="range"
+             min="15" max="70" value="28">
+
+      <div class="picture" id="fan">🌀</div>
+      <p class="status" id="systemStatus">
+        Holat: me'yorida
+      </p>
+      <p id="systemMessage">
+        Ventilyatsiya hozir o'chiq.
+      </p>
+    </div>
+
+    <p>
+      Virtual tajribalarni Wokwi yoki Tinkercad kabi
+      simulyatsiya platformalarida ham bajarish mumkin.
+    </p>
+  </section>
+
+  <!-- 6-SLAYD -->
+  <section class="slide">
+    <h2>Qo'llanilish sohalari</h2>
+
+    <div class="cards">
+      <div class="card">
+        <div class="picture">🏭</div>
+        <h3>Ishlab chiqarish</h3>
+        <p>Uskunalar holati va ishlab chiqarish jarayonini kuzatish.</p>
+      </div>
+
+      <div class="card">
+        <div class="picture">📦</div>
+        <h3>Ombor</h3>
+        <p>Mahsulot saqlanadigan joydagi harorat va namlikni nazorat qilish.</p>
+      </div>
+
+      <div class="card">
+        <div class="picture">⚡</div>
+        <h3>Energiya</h3>
+        <p>Elektr sarfini kuzatish va ortiqcha sarfni aniqlash.</p>
+      </div>
+
+      <div class="card">
+        <div class="picture">🛡️</div>
+        <h3>Xavfsizlik</h3>
+        <p>Tutun yoki xavfli vaziyat yuzaga kelganda ogohlantirish berish.</p>
+      </div>
+
+      <div class="card">
+        <div class="picture">📱</div>
+        <h3>Masofaviy nazorat</h3>
+        <p>Ko'rsatkichlarni kompyuter yoki telefon orqali kuzatish.</p>
+      </div>
+
+      <div class="card">
+        <div class="picture">🔧</div>
+        <h3>Texnik xizmat</h3>
+        <p>Uskunadagi o'zgarishlarni kuzatib, tekshiruvni rejalashtirish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7-SLAYD -->
+  <section class="slide">
+    <h2>Afzalliklar va cheklovlar</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>✅ Afzalliklari</h3>
+        <p>Jarayonlarni tezkor kuzatishga yordam beradi.</p>
+        <p>Takroriy vazifalarni avtomatlashtiradi.</p>
+        <p>Muammolarni ertaroq aniqlash imkonini beradi.</p>
+        <p>Energiya va vaqtni tejashga yordam berishi mumkin.</p>
+      </div>
+
+      <div class="card">
+        <h3>⚠️ Cheklovlari</h3>
+        <p>Qurilmalar va texnik xizmat xarajat talab qiladi.</p>
+        <p>Ma'lumotlarni himoyalash zarur.</p>
+        <p>Tarmoq uzilishi masofaviy nazoratga ta'sir qiladi.</p>
+        <p>Noto'g'ri sensor yoki sozlama xato natija berishi mumkin.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8-SLAYD -->
+  <section class="slide">
+    <h2>Bunday tizimlar hozir mavjudmi?</h2>
+    <p>
+      Ha. Hozirgi zamon korxonalarida IoT texnologiyalari
+      uskunalar holatini kuzatish, ishlab chiqarish
+      ma'lumotlarini yig'ish va ayrim jarayonlarni
+      avtomatlashtirish uchun qo'llaniladi.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Sanoat IoT</h3>
+        <p>Uskunalar ma'lumotlarini kuzatish va nosozliklarni aniqlash.</p>
+      </div>
+
+      <div class="card">
+        <h3>Aqlli bino</h3>
+        <p>Harorat, yoritish va energiya sarfini boshqarish.</p>
+      </div>
+
+      <div class="card">
+        <h3>Logistika</h3>
+        <p>Mahsulot va yuklarni kuzatish, saqlash sharoitlarini nazorat qilish.</p>
+      </div>
+    </div>
+
+    <p>
+      Ushbu loyiha esa shu texnologiyalarning asosiy
+      ishlash prinsipini ko'rsatuvchi o'quv simulyatsiyasidir.
+    </p>
+  </section>
+
+  <!-- 9-SLAYD -->
+  <section class="slide">
+    <h2>Xulosa</h2>
+    <p>
+      Simulyatsion IoT loyiha sensorlardan ma'lumot olish,
+      uni tahlil qilish va vaziyatga mos javob qaytarish
+      jarayonini o'rganishga yordam beradi. Avval virtual
+      muhitda sinov o'tkazish orqali tizim qoidalarini
+      tekshirish va xatolarni aniqlash mumkin.
+    </p>
+
+    <div class="card">
+      <h3>Foydalanilgan manbalar</h3>
+      <p>IBM — ibm.com/topics/internet-of-things</p>
+      <p>Microsoft Azure — azure.microsoft.com</p>
+      <p>Wokwi — wokwi.com</p>
+    </div>
+
+    <h1>E'tiboringiz uchun rahmat!</h1>
+  </section>
+
+  <div class="controls">
+    <button onclick="changeSlide(-1)">← Oldingi</button>
+    <span id="counter">1 / 9</span>
+    <button onclick="changeSlide(1)">Keyingi →</button>
+    <button onclick="toggleFullScreen()">⛶ To'liq ekran</button>
+  </div>
+
+  <script>
+    // 1. Barcha slaydlarni topamiz.
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    // 2. Kerakli slaydni ekranga chiqaramiz.
+    function showSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === currentSlide);
+      });
+
+      document.getElementById("counter").textContent =
+        (currentSlide + 1) + " / " + slides.length;
+    }
+
+    // 3. Oldingi va keyingi slaydga o'tish.
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    // 4. Klaviatura orqali boshqarish.
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "ArrowRight") changeSlide(1);
+      if (event.key === "ArrowLeft") changeSlide(-1);
+    });
+
+    // 5. To'liq ekran rejimi.
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // 6. Harorat simulyatori.
+    const temperature = document.getElementById("temperature");
+
+    temperature.addEventListener("input", function() {
+      const value = Number(temperature.value);
+      document.getElementById("tempValue").textContent = value + "°C";
+
+      const fan = document.getElementById("fan");
+      const status = document.getElementById("systemStatus");
+      const message = document.getElementById("systemMessage");
+
+      if (value > 40) {
+        fan.textContent = "💨";
+        status.textContent = "Holat: harorat yuqori";
+        message.textContent =
+          "Harorat 40°C dan oshdi. Ventilyatsiya yoqildi!";
+      } else {
+        fan.textContent = "🌀";
+        status.textContent = "Holat: me'yorida";
+        message.textContent =
+          "Ventilyatsiya hozir o'chiq.";
+      }
+    });
+
+    // Taqdimot birinchi slayddan boshlanadi.
+    showSlide(0);
+  </script>
+
+</body>
+</html>
